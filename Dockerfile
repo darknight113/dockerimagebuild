@@ -28,7 +28,7 @@ RUN wget www.gmail.com
 
 FROM alpine AS server3
 
-RUN mdir /home/sample3
+RUN mkdir /home/sample3
 
 WORKDIR /home/sample3
 
