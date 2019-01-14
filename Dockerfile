@@ -8,7 +8,7 @@ RUN pwd
 
 RUN yum update -y
 
-RUN yum wget -y
+RUN yum install wget -y
 
 RUN wget www.google.com
 
