@@ -12,6 +12,8 @@ RUN yum install wget -y
 
 RUN wget www.google.com
 
+RUN mv /home/sample1/index.html /home/sample1/google.html
+
 FROM ubuntu AS server2
 
 RUN mkdir /home/sample2
@@ -24,7 +26,9 @@ RUN apt-get update -y
 
 RUN apt-get install wget -y
 
-RUN wget www.gmail.com
+RUN wget www.facebook.com
+
+RUN mv /home/sample2/index.html /home/sample2/facebook.html
 
 FROM alpine AS server3
 
@@ -34,8 +38,8 @@ WORKDIR /home/sample3
 
 RUN pwd
 
-COPY --from=server1 /home/sample1 .
+COPY --from=server1 /home/sample1/ .
 
-COPY --from=server2 /home/sample2 .
+COPY --from=server2 /home/sample2/ .
 
 ENTRYPOINT ["sh"]
