@@ -38,8 +38,8 @@ WORKDIR /home/sample3
 
 RUN pwd
 
-COPY --from=server1 /home/sample1/ .
+COPY --from=server1 /home/sample1/. .
 
-COPY --from=server2 /home/sample2/ .
+COPY --from=server2 /home/sample2/. .
 
 ENTRYPOINT ["sh"]
