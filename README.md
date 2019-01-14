@@ -1,2 +1,0 @@
-# dockerimagebuild
-Alpine image built 
